@@ -6,7 +6,7 @@ with open(path, 'r') as f:
 
 
 old = 'proxyReq.setHeader("Origin", GATEWAY_TARGET);\n});'
-new = 'proxyReq.setHeader("Origin", GATEWAY_TARGET);\n  if(req.body){constb=JSON.stringify(req.body);proxyReq.setHeader("Content-Length",Buffer.byteLength(b));proxyReq.write(b);}\n});'
+new = 'proxyReq.setHeader("Origin", GATEWAY_TARGET);\n  if(req.body){const b=JSON.stringify(req.body);proxyReq.setHeader("Content-Length",Buffer.byteLength(b));proxyReq.write(b);}\n});'
 
 
 code = code.replace(old, new, 1)
